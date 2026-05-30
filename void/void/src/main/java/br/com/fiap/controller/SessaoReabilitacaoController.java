@@ -24,5 +24,5 @@ public class SessaoReabilitacaoController {
     public ResponseEntity<List<SessaoReabilitacao>> listarTodas() {
         return ResponseEntity.ok(service.listarTodas());
     }
-    
+
 }
