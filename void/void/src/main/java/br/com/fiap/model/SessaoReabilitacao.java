@@ -11,7 +11,7 @@ public class SessaoReabilitacao {
     @EmbeddedId
     private SessaoReabilitacaoId id;
 
-    // Percentual de desgaste captado pelo Arduino/ESP32 (sensores)
+    // Percentual de desgaste captado pelo Arduino
     private Double desgasteAcumulado;
 
     // Flag que será validada no PL/SQL com IF/ELSE para travar o treino
