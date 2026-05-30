@@ -13,7 +13,7 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
 
-    // Senha secreta da API 
+    // Senha secreta da API
     private static final String SECRET = "FIAP_VOID_SECRET_KEY_123";
 
     public String gerarToken(String email) {
