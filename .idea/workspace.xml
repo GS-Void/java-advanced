@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8356c774-97c3-4f92-b717-06eaf49be033" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/exception/TratadorDeErros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/security/ErroAutenticacaoHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
