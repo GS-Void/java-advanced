@@ -10,6 +10,6 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "TB_VOID_FISIOTERAPEUTA")
 public class Fisioterapeuta extends Usuario {
-    
+
     private String registroProfissional;
 }
