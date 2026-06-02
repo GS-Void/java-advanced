@@ -13,9 +13,9 @@ Através da integração com sensores wearables (ESP32), o sistema coleta dados 
  
 ## 👥 Equipe de Desenvolvimento (Turma 2TDSPO)
  
-- **Pedro Henrique Luiz Alves Duarte**
-- **Guilherme Macedo Martins**
-- **Henrique Martins**
+- **Pedro Henrique Luiz Alves Duarte RM563405**
+- **Guilherme Macedo Martins RM562396**
+- **Henrique Martins RM563620**
  
 ---
  
