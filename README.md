@@ -164,7 +164,7 @@ A arquitetura de implantação foi otimizada para máxima eficiência de custos,
 ### 1️⃣ Clonar o Repositório
 
 ```bash
-git clone <url-do-seu-repositorio>
+git clone https://github.com/GS-Void/java-advanced.git
 ```
 
 ### 2️⃣ Importar na IDE
