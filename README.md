@@ -13,18 +13,18 @@ Através da integração com sensores wearables (**ESP32**), o sistema coleta da
 
 ## 👥 Equipe de Desenvolvimento (Turma 2TDSPO)
 
-- **Pedro Henrique Luiz Alves Duarte - RM563405**
-- **Guilherme Macedo Martins - RM562396**
-- **Henrique Martins - RM563620**
+* **Pedro Henrique Luiz Alves Duarte - RM563405**
+* **Guilherme Macedo Martins - RM562396**
+* **Henrique Martins - RM563620**
 
 ---
 
 ## 🔗 Links Oficiais do Projeto
 
-- **Deploy da API (Nuvem):** `Insira o link base da Azure aqui`
-- **Documentação Viva (Swagger):** `Insira o link do Swagger em produção aqui`
-- **Apresentação Técnica (Arquitetura e Demo):** `Insira o link do vídeo de 10 min aqui`
-- **Pitch Comercial:** `Insira o link do vídeo de 3 min aqui`
+* **Deploy da API (Nuvem):** `Insira o link base da Azure aqui`
+* **Documentação Viva (Swagger):** `Insira o link do Swagger em produção aqui`
+* **Apresentação Técnica (Arquitetura e Demo):** `Insira o link do vídeo de 10 min aqui`
+* **Pitch Comercial:** `Insira o link do vídeo de 3 min aqui`
 
 ---
 
@@ -38,24 +38,28 @@ Para visualização completa da modelagem e arquitetura adotada, consulte os arq
 
 > Para visualizar o diagrama, abra o arquivo acima no **[Archi](https://www.archimatetool.com/)** (ferramenta gratuita de modelagem ArchiMate).
 
+#### Diagrama ArchiMate
+
+<a href="https://ibb.co/pBmm50rY"><img src="https://i.ibb.co/ZpZZ7L1q/VOID.png" alt="Arquitetura VOID ArchiMate" border="0" width="100%"/></a>
+
 O modelo ArchiMate do VOID está estruturado em quatro camadas:
 
 | Camada | Elementos modelados |
-|---------|---------------------|
+|---|---|
 | **Motivation** | Stakeholders (Fisioterapeutas e Pacientes), Driver (Telemetria ISS), Goal (Evitar Lesões), Constraint (Azure econômica) |
 | **Business** | Atores (Fisioterapeuta, Paciente), Processos (Realizar Sessão, Preparar Plano, Analisar Dados), Objeto (Relatório de Evolução) |
 | **Application** | API Principal VOID, App Web/Mobile, Serviço de Ingestão IoT, Módulo de IA, Banco Oracle, Módulo de Segurança JWT/LGPD |
 | **Technology** | Servidor Azure VM, Roteador da Clínica, Rede Wi-Fi 802.11 |
 
-### Fluxo Principal Modelado
+**Fluxo principal modelado:**
 
 ```text
 Stakeholders (Fisioterapeuta / Paciente)
-        ↓ association
+        ↓  association
 Business Process: Realizar Sessão de Reabilitação
-        ↓ triggering
+        ↓  triggering
 Business Process: Analisar Dados dos Sensores
-        ↓ access
+        ↓  access
 Business Object: Relatório de Evolução
 
 Serviço de Ingestão IoT  →flow→  API Principal VOID
@@ -72,11 +76,11 @@ Azure VM                 →hosting→  API Principal VOID + Banco Oracle
 
 #### Modelo Lógico
 
-![Modelo Lógico VOID](https://i.ibb.co/hRdBQPBs/Logical-3.png)
+<a href="https://ibb.co/zh2X9yXs"><img src="https://i.ibb.co/hRdBQPBs/Logical-3.png" alt="Modelo Lógico VOID" border="0" width="100%"/></a>
 
 #### Modelo Relacional
 
-![Modelo Relacional VOID](https://i.ibb.co/HpGDyFPC/Relational-1-3.png)
+<a href="https://ibb.co/x8zSbCgY"><img src="https://i.ibb.co/HpGDyFPC/Relational-1-3.png" alt="Modelo Relacional VOID" border="0" width="100%"/></a>
 
 ---
 
@@ -84,10 +88,10 @@ Azure VM                 →hosting→  API Principal VOID + Banco Oracle
 
 A API RESTful do VOID foi desenhada de forma direta e objetiva, cumprindo rigorosamente os requisitos de negócio e integração:
 
-- **Autenticação (Auth):** Geração de Token JWT Stateless para controle rigoroso de acesso (Compliance/LGPD).
-- **Gestão de Usuários (CRUD):** Cadastro e gerenciamento de `Pacientes` e `Fisioterapeutas`.
-- **Sessões de Reabilitação:** Registro de treinos, vinculando o paciente, o fisioterapeuta responsável e o protocolo espacial aplicado.
-- **Telemetria de Fadiga:** Ingestão de dados contínuos de sensores com armazenamento otimizado de payloads JSON para análise de desgaste físico.
+* **Autenticação (Auth):** Geração de Token JWT Stateless para controle rigoroso de acesso (Compliance/LGPD).
+* **Gestão de Usuários (CRUD):** Cadastro e gerenciamento de `Pacientes` e `Fisioterapeutas`.
+* **Sessões de Reabilitação:** Registro de treinos, vinculando o paciente, o fisioterapeuta responsável e o protocolo espacial aplicado.
+* **Telemetria de Fadiga:** Ingestão de dados contínuos de sensores com armazenamento otimizado de payloads JSON para análise de desgaste físico.
 
 ---
 
@@ -115,8 +119,8 @@ podem acessar ou modificar dados sensíveis.
 
 Um `@RestControllerAdvice` centralizado captura:
 
-- Erros de validação (`400 Bad Request`)
-- Falhas internas (`500 Internal Server Error`)
+* Erros de validação (`400 Bad Request`)
+* Falhas internas (`500 Internal Server Error`)
 
 Retornando respostas JSON padronizadas e impedindo o vazamento de informações sensíveis para o cliente.
 
@@ -165,11 +169,9 @@ git clone <url-do-seu-repositorio>
 
 ### 2️⃣ Importar na IDE
 
-Importe o projeto em uma das IDEs abaixo:
-
-- IntelliJ IDEA
-- VS Code
-- Eclipse
+* IntelliJ IDEA
+* VS Code
+* Eclipse
 
 ### 3️⃣ Atualizar Dependências
 
@@ -179,13 +181,9 @@ mvn clean install
 
 ### 4️⃣ Configurar o Banco Oracle
 
-Edite o arquivo:
-
 ```plaintext
 src/main/resources/application.properties
 ```
-
-Configure:
 
 ```properties
 spring.datasource.url=
@@ -195,15 +193,11 @@ spring.datasource.password=
 
 ### 5️⃣ Configurar o DDL
 
-> Importante: o banco de dados é gerenciado através de scripts SQL próprios (DDL), garantindo maior controle sobre tabelas, sequences e constraints.
-
 ```properties
 spring.jpa.hibernate.ddl-auto=none
 ```
 
 ### 6️⃣ Executar a Aplicação
-
-Execute a classe principal:
 
 ```java
 VoidApplication.java
@@ -213,13 +207,9 @@ VoidApplication.java
 
 ## 📖 Documentação da API
 
-Após iniciar a aplicação, acesse:
-
 ```plaintext
 http://localhost:8080/swagger-ui.html
 ```
-
-A interface Swagger permitirá testar todos os endpoints diretamente pelo navegador.
 
 ---
 
@@ -247,12 +237,12 @@ Fisioterapeuta / Paciente
 
 ## 🎯 Objetivos do Projeto
 
-- Monitorar dados biométricos em tempo real.
-- Identificar sinais precoces de fadiga muscular.
-- Reduzir riscos de lesões durante a reabilitação.
-- Auxiliar fisioterapeutas na tomada de decisão.
-- Aplicar conceitos inspirados na tecnologia aeroespacial para a saúde humana.
-- Contribuir para a **ODS 3 — Saúde e Bem-Estar**.
+* Monitorar dados biométricos em tempo real.
+* Identificar sinais precoces de fadiga muscular.
+* Reduzir riscos de lesões durante a reabilitação.
+* Auxiliar fisioterapeutas na tomada de decisão.
+* Aplicar conceitos inspirados na tecnologia aeroespacial para a saúde humana.
+* Contribuir para a **ODS 3 — Saúde e Bem-Estar**.
 
 ---
 
