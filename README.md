@@ -34,43 +34,12 @@ Para visualização completa da modelagem e arquitetura adotada, consulte os arq
 
 ### 🏗️ Arquitetura Corporativa (TOGAF/ArchiMate)
 
-📂 **[Acessar o Arquivo Fonte da Arquitetura (ArchiMate)](./Arquitetura-Void.archimate)**
-
-> Para visualizar o diagrama, abra o arquivo acima no **[Archi](https://www.archimatetool.com/)** (ferramenta gratuita de modelagem ArchiMate).
-
 #### Diagrama ArchiMate
 
 <a href="https://ibb.co/pBmm50rY"><img src="https://i.ibb.co/ZpZZ7L1q/VOID.png" alt="Arquitetura VOID ArchiMate" border="0" width="100%"/></a>
 
 O modelo ArchiMate do VOID está estruturado em quatro camadas:
 
-| Camada | Elementos modelados |
-|---|---|
-| **Motivation** | Stakeholders (Fisioterapeutas e Pacientes), Driver (Telemetria ISS), Goal (Evitar Lesões), Constraint (Azure econômica) |
-| **Business** | Atores (Fisioterapeuta, Paciente), Processos (Realizar Sessão, Preparar Plano, Analisar Dados), Objeto (Relatório de Evolução) |
-| **Application** | API Principal VOID, App Web/Mobile, Serviço de Ingestão IoT, Módulo de IA, Banco Oracle, Módulo de Segurança JWT/LGPD |
-| **Technology** | Servidor Azure VM, Roteador da Clínica, Rede Wi-Fi 802.11 |
-
-**Fluxo principal modelado:**
-
-```text
-Stakeholders (Fisioterapeuta / Paciente)
-        ↓  association
-Business Process: Realizar Sessão de Reabilitação
-        ↓  triggering
-Business Process: Analisar Dados dos Sensores
-        ↓  access
-Business Object: Relatório de Evolução
-
-Serviço de Ingestão IoT  →flow→  API Principal VOID
-API Principal VOID       →flow→  Módulo de IA (Análise Espacial)
-API Principal VOID       →flow→  App VOID (Web/Mobile)
-Banco Oracle             →flow→  API Principal VOID
-Módulo JWT/LGPD          →serving→  API Principal VOID
-Azure VM                 →hosting→  API Principal VOID + Banco Oracle
-```
-
----
 
 ### 🗄️ Modelo Entidade-Relacionamento (Banco de Dados)
 
