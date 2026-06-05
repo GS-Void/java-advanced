@@ -76,4 +76,28 @@ public class PacienteController {
         response.setLimiteEsforcoCritico(paciente.getLimiteEsforcoCritico());
         return response;
     }
+    @Operation(summary = "Atualizar paciente", description = "Atualiza os dados de um paciente existente.")
+    @PutMapping("/{id}")
+    public ResponseEntity<PacienteResponseDTO> atualizar(@PathVariable Long id, @Valid @RequestBody PacienteRequestDTO dto) {
+        Paciente paciente = new Paciente();
+        paciente.setNome(dto.getNome());
+        paciente.setCpf(dto.getCpf());
+        paciente.setEmail(dto.getEmail());
+        paciente.setLimiteEsforcoCritico(dto.getLimiteEsforcoCritico());
+
+        Paciente atualizado = service.atualizar(id, paciente);
+        if (atualizado != null) {
+            return ResponseEntity.ok(converterParaResponse(atualizado));
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @Operation(summary = "Deletar paciente", description = "Remove um paciente do sistema.")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        if (service.deletar(id)) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
