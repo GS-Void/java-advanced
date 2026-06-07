@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8356c774-97c3-4f92-b717-06eaf49be033" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/controller/FisioterapeutaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/controller/FisioterapeutaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/controller/PacienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/controller/PacienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/controller/SessaoReabilitacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/controller/SessaoReabilitacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/FisioterapeutaRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/FisioterapeutaRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/FisioterapeutaResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/FisioterapeutaResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/PacienteRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/PacienteRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/PacienteResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/PacienteResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/SessaoReabilitacaoRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/SessaoReabilitacaoRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/SessaoReabilitacaoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/dto/SessaoReabilitacaoResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/exception/TratadorDeErros.java" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/java/br/com/fiap/exception/TratadorDeErros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/void/void/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/void/void/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
