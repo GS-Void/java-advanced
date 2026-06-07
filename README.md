@@ -23,8 +23,8 @@ Através da integração com sensores wearables (**ESP32**), o sistema coleta da
 
 * **Deploy da API (Nuvem):** `Insira o link base da Azure aqui`
 * **Documentação Viva (Swagger):** `Insira o link do Swagger em produção aqui`
-* **Apresentação Técnica (Arquitetura e Demo):** `Insira o link do vídeo de 10 min aqui`
-* **Pitch Comercial:** `Insira o link do vídeo de 3 min aqui`
+* **Apresentação Técnica:** https://youtu.be/ZbYV409GIwE?si=OZPmUUPoVhhv5WYY
+* **Pitch Comercial:** https://youtube.com/shorts/QCIUYX5_Plg?si=Fmh7yEGMkcL-Z1oD
 
 ---
 
