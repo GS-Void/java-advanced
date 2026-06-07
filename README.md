@@ -21,10 +21,12 @@ Através da integração com sensores wearables (**ESP32**), o sistema coleta da
 
 ## 🔗 Links Oficiais do Projeto
 
-* **Deploy da API (Nuvem):** `Insira o link base da Azure aqui`
-* **Documentação Viva (Swagger):** `Insira o link do Swagger em produção aqui`
+* **Deploy da API (Nuvem):** `https://java-advanced-5ce0.onrender.com/api/`
+* **Documentação Viva (Swagger):** `https://java-advanced-5ce0.onrender.com/swagger-ui/index.html`
 * **Apresentação Técnica:** https://youtu.be/ZbYV409GIwE?si=OZPmUUPoVhhv5WYY
 * **Pitch Comercial:** https://youtube.com/shorts/QCIUYX5_Plg?si=Fmh7yEGMkcL-Z1oD
+
+> **Nota:** Como utilizamos o plano gratuito do Render, a API "dorme" após períodos de inatividade. O primeiro acesso pode levar até 50 segundos para responder enquanto o serviço é iniciado.
 
 ---
 
