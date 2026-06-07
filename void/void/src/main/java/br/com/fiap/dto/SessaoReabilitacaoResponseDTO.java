@@ -1,13 +1,9 @@
 package br.com.fiap.dto;
 
 import br.com.fiap.model.SessaoReabilitacaoId;
-import lombok.Data;
 
-@Data
-public class SessaoReabilitacaoResponseDTO {
-
-    private SessaoReabilitacaoId id;
-    private Double desgasteAcumulado;
-    private Boolean alertaFadigaCritica;
-
-}
+public record SessaoReabilitacaoResponseDTO(
+        SessaoReabilitacaoId id,
+        Double desgasteAcumulado,
+        Boolean alertaFadigaCritica
+) {}

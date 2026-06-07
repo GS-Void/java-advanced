@@ -1,12 +1,7 @@
 package br.com.fiap.dto;
 
-import lombok.Data;
-
-@Data
-public class PacienteResponseDTO {
-
-    private Long id;
-    private String nome;
-    private Double limiteEsforcoCritico;
-
-}
+public record PacienteResponseDTO(
+        Long id,
+        String nome,
+        Double limiteEsforcoCritico
+) {}

@@ -27,10 +27,10 @@ public class SecurityConfig {
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-                        .requestMatchers("/api/auth/**").permitAll() // Libera a rota de gerar token
+                        .requestMatchers("/api/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                // Aplica a sua mensagem de erro personalizada
+
                 .exceptionHandling(ex -> ex
                         .authenticationEntryPoint(erroHandler)
                         .accessDeniedHandler(erroHandler)

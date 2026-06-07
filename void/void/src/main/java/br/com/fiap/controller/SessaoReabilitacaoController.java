@@ -26,33 +26,27 @@ public class SessaoReabilitacaoController {
     @Autowired
     private SessaoReabilitacaoService service;
 
-    @Operation(
-            summary = "Registrar nova sessão de telemetria",
-            description = "Salva os dados de desgaste captados pelos sensores IoT. Como fazer a requisição: Envie no corpo um JSON com pacienteId, dataSessao (formato YYYY-MM-DD) e desgasteAcumulado."
-    )
+    @Operation(summary = "Registrar nova sessão de telemetria")
     @PostMapping
     public ResponseEntity<SessaoReabilitacaoResponseDTO> criar(@Valid @RequestBody SessaoReabilitacaoRequestDTO dto) {
         SessaoReabilitacaoId id = new SessaoReabilitacaoId();
-        id.setPacienteId(dto.getPacienteId());
-        id.setDataSessao(dto.getDataSessao());
+        id.setPacienteId(dto.pacienteId());
+        id.setDataSessao(dto.dataSessao());
 
         SessaoReabilitacao sessao = new SessaoReabilitacao();
         sessao.setId(id);
-        sessao.setDesgasteAcumulado(dto.getDesgasteAcumulado());
+        sessao.setDesgasteAcumulado(dto.desgasteAcumulado());
         sessao.setAlertaFadigaCritica(false);
 
         Paciente paciente = new Paciente();
-        paciente.setId(dto.getPacienteId());
+        paciente.setId(dto.pacienteId());
         sessao.setPaciente(paciente);
 
         SessaoReabilitacao salva = service.salvar(sessao);
         return ResponseEntity.ok(converterParaResponse(salva));
     }
 
-    @Operation(
-            summary = "Listar histórico de sessões",
-            description = "Retorna todas as sessões registradas no banco. Como fazer a requisição: GET simples na rota base."
-    )
+    @Operation(summary = "Listar histórico de sessões")
     @GetMapping
     public ResponseEntity<List<SessaoReabilitacaoResponseDTO>> listarTodas() {
         List<SessaoReabilitacao> lista = service.listarTodas();
@@ -64,10 +58,7 @@ public class SessaoReabilitacaoController {
         return ResponseEntity.ok(responses);
     }
 
-    @Operation(
-            summary = "Buscar sessão específica",
-            description = "Localiza uma sessão usando a chave composta (ID do Paciente + Data). Como fazer a requisição: GET passando os dois parâmetros na URL (ex: /api/sessoes/1/2026-04-15)."
-    )
+    @Operation(summary = "Buscar sessão específica")
     @GetMapping("/{pacienteId}/{dataSessao}")
     public ResponseEntity<SessaoReabilitacaoResponseDTO> buscarPorId(
             @PathVariable Long pacienteId,
@@ -84,10 +75,7 @@ public class SessaoReabilitacaoController {
         return ResponseEntity.notFound().build();
     }
 
-    @Operation(
-            summary = "Atualizar sessão de telemetria",
-            description = "Substitui os dados de uma sessão existente. Como fazer a requisição: Passe pacienteId e dataSessao na URL e envie os novos dados no corpo do JSON."
-    )
+    @Operation(summary = "Atualizar sessão de telemetria")
     @PutMapping("/{pacienteId}/{dataSessao}")
     public ResponseEntity<SessaoReabilitacaoResponseDTO> atualizar(
             @PathVariable Long pacienteId,
@@ -100,11 +88,11 @@ public class SessaoReabilitacaoController {
 
         SessaoReabilitacao sessao = new SessaoReabilitacao();
         sessao.setId(id);
-        sessao.setDesgasteAcumulado(dto.getDesgasteAcumulado());
+        sessao.setDesgasteAcumulado(dto.desgasteAcumulado());
         sessao.setAlertaFadigaCritica(false);
 
         Paciente paciente = new Paciente();
-        paciente.setId(dto.getPacienteId());
+        paciente.setId(dto.pacienteId());
         sessao.setPaciente(paciente);
 
         SessaoReabilitacao atualizada = service.atualizar(id, sessao);
@@ -114,10 +102,7 @@ public class SessaoReabilitacaoController {
         return ResponseEntity.notFound().build();
     }
 
-    @Operation(
-            summary = "Deletar sessão",
-            description = "Remove o registro de uma sessão utilizando a chave composta. Como fazer a requisição: DELETE passando pacienteId e dataSessao na URL."
-    )
+    @Operation(summary = "Deletar sessão")
     @DeleteMapping("/{pacienteId}/{dataSessao}")
     public ResponseEntity<Void> deletar(
             @PathVariable Long pacienteId,
@@ -134,10 +119,10 @@ public class SessaoReabilitacaoController {
     }
 
     private SessaoReabilitacaoResponseDTO converterParaResponse(SessaoReabilitacao sessao) {
-        SessaoReabilitacaoResponseDTO response = new SessaoReabilitacaoResponseDTO();
-        response.setId(sessao.getId());
-        response.setDesgasteAcumulado(sessao.getDesgasteAcumulado());
-        response.setAlertaFadigaCritica(sessao.getAlertaFadigaCritica());
-        return response;
+        return new SessaoReabilitacaoResponseDTO(
+                sessao.getId(),
+                sessao.getDesgasteAcumulado(),
+                sessao.getAlertaFadigaCritica()
+        );
     }
 }
